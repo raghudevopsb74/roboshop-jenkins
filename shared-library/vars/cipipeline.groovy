@@ -1,11 +1,3 @@
-def info(message) {
-  echo "INFO: ${message}"
-}
-
-def warning(message) {
-  echo "WARNING: ${message}"
-}
-
 def call() {
   pipeline {
     agent any
@@ -13,11 +5,7 @@ def call() {
     stages {
       stage('Compile Code') {
         steps {
-          echo 'Hello World'
-          script {
-            info 'Starting'
-            warning 'Nothing to do!'
-          }
+         sh 'env'
         }
       }
 
@@ -34,12 +22,15 @@ def call() {
       }
 
       stage('Code Security') {
+        when {
+
+        }
         steps {
           echo 'Hello World'
         }
       }
 
-      stage('App Deploy') {
+      stage('Release') {
         steps {
           echo 'Hello World'
         }
