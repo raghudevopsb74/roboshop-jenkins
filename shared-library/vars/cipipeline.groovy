@@ -1,6 +1,9 @@
 def call() {
 
   node('workstation') {
+
+    sh 'find .'
+
     stage('Compile Code') {
       common.compile()
     }
