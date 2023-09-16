@@ -1,4 +1,5 @@
 def compile() {
+  sh 'find .'
   if (env.codeType == "maven") {
     print 'Maven'
   }
