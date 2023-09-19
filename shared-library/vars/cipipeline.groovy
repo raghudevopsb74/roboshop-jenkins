@@ -4,7 +4,7 @@ def call() {
 
     sh "find . | sed -e '1d' |xargs rm -rf"
     sh 'env'
-    git branch: 'main', url: "https://github.com/raghudevopsb74/${component}"
+    git branch: "${BRANCH_NAME}", url: "https://github.com/raghudevopsb74/${component}"
 
     stage('Compile Code') {
       common.compile()
