@@ -1,6 +1,6 @@
 def compile() {
   if (env.codeType == "maven") {
-    sh 'mvn package'
+    sh '/home/centos/maven/bin/mvn package'
   }
 
   if (env.codeType == "nodejs") {
