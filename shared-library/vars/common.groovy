@@ -69,6 +69,9 @@ def release() {
       if(env.codeType == "nodejs") {
         sh 'zip -r ${component}-${TAG_NAME}.zip server.js node_modules'
       }
+      if(env.codeType == "maven") {
+        sh 'cp target/${component}-1.0.jar ${component}.jar; zip -r ${component}-${TAG_NAME}.zip ${component}.jar'
+      }
 
       sh 'curl -v -u ${nexususer}:${nexuspass} --upload-file ${component}-${TAG_NAME}.zip http://172.31.24.24:8081/repository/${component}/${component}-${TAG_NAME}.zip'
     }
