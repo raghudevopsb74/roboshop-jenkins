@@ -8,7 +8,7 @@ def call(){
       string(name: 'ENV', defaultValue: '', description: 'Which Environment to Deploy?')
     }
 
-    stage {
+    stages {
       stage('Deploy') {
         steps {
           echo 'OK'
