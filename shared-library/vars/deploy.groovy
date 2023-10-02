@@ -9,7 +9,7 @@ def call(){
     }
 
     environment {
-      SSH = creddentials('centos-ssh')
+      SSH = credentials('centos-ssh')
     }
 
     stages {
