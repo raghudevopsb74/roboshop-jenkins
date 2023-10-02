@@ -22,7 +22,7 @@ def call(){
         steps {
           sh '''
             aws ec2 describe-instances --filters "Name=tag:Name,Values=${ENV}-${COMPONENT}" --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text >inv
-            ansible-plaubook -i inv main.yml -e component=${COMPONENT} -e env=${ENV}
+            ansible-playbook -i inv main.yml -e component=${COMPONENT} -e env=${ENV}
 '''
         }
       }
